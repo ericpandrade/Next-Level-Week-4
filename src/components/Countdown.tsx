@@ -22,7 +22,7 @@ export function CountDown() {
       }, 1000);
     }
   }, [active, time]);
-  //teste
+
   return (
     <div>
       <div className={styles.countDownContainer}>
