@@ -20,7 +20,7 @@
     text-align: center;
   }
 
-  & > div > span {
+  & div span {
     flex: 1;
   }
 
@@ -59,7 +59,36 @@
 
   transition: background-color 0.5s;
 
-  &:hover {
+  &:not(:disabled):hover {
     background: var(--blue-dark);
   }
+
+  &:disabled {
+    background: var(--white-dark);
+    color: var(--text);
+    cursor: not-allowed;
+    border-bottom: 0.25rem solid var(--green);
+
+    span {
+      width: 1.3rem;
+
+      clip-path: circle();
+      margin-left: 1rem;
+
+      background: var(--green);
+      color: var(--white);
+      font-size: 1.15rem;
+      font-weight: bolder;
+    }
+  }
+}
+
+.countDownButtonActive {
+  background: var(--white);
+  color: var(--title);
+}
+
+.countDownButtonActive:not(:disabled):hover {
+  background: var(--red);
+  color: var(--white);
 }
