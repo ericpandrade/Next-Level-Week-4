@@ -1,6 +1,7 @@
 .countDownContainer {
   display: flex;
   align-items: center;
+  min-width: 200px;
 
   font-family: Rajdhani;
   font-weight: 600;
@@ -17,6 +18,11 @@
     box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
     border-radius: 0.3125rem;
     font-size: 8.5rem;
+
+    @media (max-width: 360px) {
+      font-size: 26vw;
+    }
+
     text-align: center;
   }
 
@@ -26,6 +32,9 @@
 
   & > span {
     font-size: 6.25rem;
+    @media (max-width: 360px) {
+      font-size: 30vw;
+    }
     margin: 0 0.5rem;
   }
 
@@ -34,19 +43,21 @@
   }
 
   & > div span:last-child {
+    max-width: 80%;
     border-left: 1px solid #f0f1f3;
   }
 }
 
 .countDownButton {
   width: 100%;
+  min-width: 200px;
+
   height: 5rem;
 
   margin-top: 2rem;
 
-  display: flex;
+  display: grid;
   align-items: center;
-  justify-content: center;
 
   border: 0;
   border-radius: 0.3125rem;
@@ -80,6 +91,10 @@
       font-size: 1.15rem;
       font-weight: bolder;
     }
+  }
+
+  button {
+    display: grid;
   }
 }
 

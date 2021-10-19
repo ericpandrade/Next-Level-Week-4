@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "git-commit-msg-linter": "^3.2.8",
     "js-cookie": "^3.0.1",
     "next": "11.1.2",
     "react": "17.0.2",
