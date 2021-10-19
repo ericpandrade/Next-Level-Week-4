@@ -4,7 +4,7 @@
 
 # Pomodoro Timer with Exercise
 
-## Projeto não finalizado.
+## Project not finished.
 
 <span style="font-family: 'Poppins', sans-serif;font-size:9pt">
 Creation of a timer pomodor with some exercises to depilate a little, and take the stress out of activities, thus making the activity more productive. Project developed at NLW 4 with some specific additions in the application.
