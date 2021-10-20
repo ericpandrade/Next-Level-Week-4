@@ -70,6 +70,10 @@
 
   transition: background-color 0.5s;
 
+  &:hover {
+    transform: scale(1.01);
+  }
+
   &:not(:disabled):hover {
     background: var(--button-dark);
   }
@@ -99,6 +103,7 @@
 }
 
 .countDownButtonActive {
+  transform: scale(0.99);
   background: var(--primary);
   color: var(--title);
 }
