@@ -32,8 +32,13 @@ export function CountDownProvider({ children }: CountDownProviderProps) {
   const [isActive, setisActive] = useState(false);
   const [hasFinished, setHasFinished] = useState(false);
 
-  const minutes = Math.floor(time / 60);
-  const seconds = Math.floor(time % 60);
+  useEffect(() => {
+    window.onbeforeunload = () => {
+      if (isActive) {
+        return "Você perderá o progresso do countdown até aqui, tem certeza?";
+      }
+    };
+  }, [isActive]);
 
   function startCountDown() {
     setisActive(true);
@@ -57,6 +62,9 @@ export function CountDownProvider({ children }: CountDownProviderProps) {
       startNewChallenge();
     }
   }, [isActive, time]);
+
+  const minutes = Math.floor(time / 60);
+  const seconds = Math.floor(time % 60);
 
   return (
     <CountDownContext.Provider

@@ -5,7 +5,7 @@
 }
 
 :root {
-  --white: #fff;
+  --primary: #fff;
   --background: #f2f3f5;
   --gray-line: #dcdde0;
   --text: #666666;
@@ -13,9 +13,27 @@
   --title: #2e384d;
   --red: #e83f5b;
   --green: #4cd62b;
-  --blue: #5965e0;
-  --blue-dark: #4953b8;
-  --blue-twitter: #2aa9e0;
+  --button: #5965e0;
+  --button-dark: #4953b8;
+  --button-twitter: #2aa9e0;
+  --countdown-bar: #f0f1f3;
+  --button-text: #fff;
+}
+
+:root.darkTheme {
+  --primary: #44475a;
+  --background: #282a36;
+  --gray-line: #dcdde0;
+  --text: #f9e0d9;
+  --text-highlight: #b3b9ff;
+  --title: #f8f8f2;
+  --red: #e83f5b;
+  --green: #97d8c4;
+  --button: #97d8b2;
+  --button-dark: #779fa1;
+  --button-twitter: #2aa9e0;
+  --button-text: #121619;
+  --countdown-bar: #282a36;
 }
 
 @media (max-width: 1080px) {
