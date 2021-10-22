@@ -7,7 +7,7 @@ import React, {
 } from "react";
 
 interface ChangeThemeProps {
-  state: boolean;
+  themeState: boolean;
   changeTheme: () => void;
 }
 
@@ -18,14 +18,14 @@ interface Props {
 const ChangeThemeContext = createContext({} as ChangeThemeProps);
 
 const ChangeThemeProvider = ({ children }: Props) => {
-  const [state, setState] = useState(false);
+  const [themeState, setThemeState] = useState(false);
 
   function changeTheme() {
-    const isDark = !state;
+    const isDark = !themeState;
 
     document.documentElement.className = isDark ? "darkTheme" : "";
 
-    setState(!state);
+    setThemeState(!themeState);
 
     localStorage.setItem("@ChangeTheme/Theme", isDark ? "darkTheme" : "");
   }
@@ -36,7 +36,7 @@ const ChangeThemeProvider = ({ children }: Props) => {
         window.localStorage.getItem("@ChangeTheme/Theme") === "darkTheme";
 
       if (storageMode) {
-        setState(
+        setThemeState(
           window.localStorage.getItem("@ChangeTheme/Theme") === "darkTheme"
         );
         document.documentElement.className = storageMode ? "darkTheme" : "";
@@ -44,7 +44,7 @@ const ChangeThemeProvider = ({ children }: Props) => {
     }
   }, []);
   return (
-    <ChangeThemeContext.Provider value={{ changeTheme, state }}>
+    <ChangeThemeContext.Provider value={{ changeTheme, themeState }}>
       {children}
     </ChangeThemeContext.Provider>
   );

@@ -3,8 +3,11 @@ import Head from "next/head";
 import styles from "../styles/pages/Login.module.scss";
 
 import Link from "next/link";
+import { useLoginAuthenticationContext } from "../contexts/LoginAuthenticationContext";
 
 const Login = () => {
+  const { routeAuthentication } = useLoginAuthenticationContext();
+
   return (
     <div className={styles.LoginContainer}>
       <Head>
@@ -28,7 +31,7 @@ const Login = () => {
         </div>
         <Link href="/">
           <a>
-            <button>
+            <button onClick={routeAuthentication}>
               <span>Logar com o GitHub</span>
               <img src="icons/arrow-login.svg" alt="Login" />
             </button>

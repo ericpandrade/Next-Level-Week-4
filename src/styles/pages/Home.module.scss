@@ -1,5 +1,8 @@
 .HomeContainer {
   display: flex;
+  @media (max-width: 720px) {
+    padding-bottom: 25rem;
+  }
 }
 
 .container {
@@ -43,5 +46,12 @@
     appearance: none;
     border: 0;
     background: transparent;
+  }
+
+  @media (max-width: 720px) {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
   }
 }
