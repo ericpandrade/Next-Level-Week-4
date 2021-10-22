@@ -1,0 +1,90 @@
+.LoginContainer {
+  padding: 2rem 1.5rem;
+  height: 100vh;
+  min-width: 280px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: var(--login-text);
+  background: var(--login-background);
+
+  h1 {
+    margin-bottom: 0.75rem;
+  }
+
+  .LogoFull {
+    height: 65%;
+  }
+
+  .AuthContainer {
+    display: flex;
+    flex-direction: column;
+
+    & > img {
+      margin-bottom: 1.25rem;
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+
+      margin-bottom: 1rem;
+
+      .LogoAuth {
+        width: 2.5rem;
+        margin-right: 0.5rem;
+      }
+
+      p {
+        font-size: 1.15rem;
+      }
+    }
+
+    button {
+      appearance: none;
+      background: transparent;
+      border: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 1rem 1.5rem;
+      border-radius: 0.3rem;
+
+      background: white;
+
+      p {
+        background: white;
+      }
+
+      img {
+        height: fit-content;
+        margin-left: 4rem;
+        width: 1.75rem;
+      }
+    }
+  }
+
+  @media (max-width: 720px) {
+    padding: 0 1rem;
+    flex-direction: column;
+
+    .LogoFull {
+      width: 250px;
+      min-width: 150px;
+
+      margin-bottom: 2.5rem;
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+    }
+
+    button {
+      white-space: nowrap;
+      margin-bottom: 2rem;
+    }
+  }
+}

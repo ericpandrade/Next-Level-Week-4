@@ -10,7 +10,7 @@ import styles from "../styles/pages/Home.module.scss";
 import { ChallengeBox } from "../components/ChallengeBox";
 import { CountDownProvider } from "../contexts/CountdownContext";
 import { ChallengesProvider } from "../contexts/ChallengesContexts";
-import { ChangeThemeProvider } from "../contexts/ChangeTheme";
+import LateralMenu from "../components/LateralMenu";
 
 interface HomeProps {
   level: number;
@@ -24,15 +24,19 @@ export default function Home({
   challengesCompleted,
 }: HomeProps) {
   return (
-    <ChangeThemeProvider>
-      <ChallengesProvider
-        level={level}
-        currentExperience={currentExperience}
-        challengesCompleted={challengesCompleted}
-      >
+    <ChallengesProvider
+      level={level}
+      currentExperience={currentExperience}
+      challengesCompleted={challengesCompleted}
+    >
+      <div className={styles.HomeContainer}>
+        <div className={styles.LateralMenu}>
+          <LateralMenu />
+        </div>
+
         <div className={styles.container}>
           <Head>
-            <title>Início | move.it</title>
+            <title>Home | Move.it</title>
           </Head>
 
           <ExperienceBar />
@@ -51,8 +55,8 @@ export default function Home({
             </section>
           </CountDownProvider>
         </div>
-      </ChallengesProvider>
-    </ChangeThemeProvider>
+      </div>
+    </ChallengesProvider>
   );
 }
 

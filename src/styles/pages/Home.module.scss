@@ -1,3 +1,7 @@
+.HomeContainer {
+  display: flex;
+}
+
 .container {
   height: 100vh;
   min-width: 280px;
@@ -28,5 +32,16 @@
         margin-bottom: 1.5rem;
       }
     }
+  }
+}
+
+.LateralMenu {
+  width: 100px;
+  background: var(--primary);
+
+  button {
+    appearance: none;
+    border: 0;
+    background: transparent;
   }
 }

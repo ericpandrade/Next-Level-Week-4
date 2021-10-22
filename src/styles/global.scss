@@ -18,6 +18,8 @@
   --button-twitter: #2aa9e0;
   --countdown-bar: #f0f1f3;
   --button-text: #fff;
+  --login-background: #2a4494;
+  --login-text: #fff;
 }
 
 :root.darkTheme {
@@ -34,6 +36,8 @@
   --button-twitter: #2aa9e0;
   --button-text: #121619;
   --countdown-bar: #282a36;
+  --login-background: #282a36;
+  --login-text: #fff;
 }
 
 @media (max-width: 1080px) {
