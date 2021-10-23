@@ -43,6 +43,7 @@ const ChangeThemeProvider = ({ children }: Props) => {
       }
     }
   }, []);
+
   return (
     <ChangeThemeContext.Provider value={{ changeTheme, themeState }}>
       {children}

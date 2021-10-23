@@ -1,4 +1,6 @@
-import { createContext, ReactNode, useContext, useState } from "react";
+import { createContext, ReactNode, useContext } from "react";
+
+import usePersistedState from "../Utils/UsePersistedState";
 
 interface loginAuthenticationContextData {
   loginState: boolean;
@@ -16,7 +18,10 @@ const LoginAuthenticationContext = createContext(
 const LoginAuthenticationProvider = ({
   children,
 }: LoginAuthenticationProps) => {
-  const [loginState, setLoginState] = useState(false);
+  const [loginState, setLoginState] = usePersistedState(
+    "@LoginAuthenticationContext/loginState",
+    false
+  );
 
   function routeAuthentication() {
     setLoginState(!loginState);

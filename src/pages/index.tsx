@@ -34,6 +34,10 @@ export default function Home({
 
   useEffect(() => {
     !loginState ? history.push("/login") : history.push("/");
+  }, []);
+
+  useEffect(() => {
+    !loginState ? history.push("/login") : history.push("/");
   }, [loginState]);
 
   return (
