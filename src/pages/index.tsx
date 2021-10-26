@@ -8,14 +8,16 @@ import { ExperienceBar } from "../components/experienceBar";
 import { Profile } from "../components/Profile";
 
 import styles from "../styles/pages/Home.module.scss";
+
 import { ChallengeBox } from "../components/ChallengeBox";
 import { CountDownProvider } from "../contexts/CountdownContext";
 import { ChallengesProvider } from "../contexts/ChallengesContexts";
+
 import LateralMenu from "../components/SideBar";
-import { useEffect } from "react";
+
+import { useEffect, useState } from "react";
 import { useRouter } from "next/dist/client/router";
 import { useLoginAuthenticationContext } from "../contexts/LoginAuthenticationContext";
-import { useHistory } from "react-router";
 
 interface HomeProps {
   level: number;
@@ -32,15 +34,20 @@ export default function Home({
 
   const history = useRouter();
 
-  useEffect(() => {
-    !loginState ? history.push("/login") : history.push("/");
-  }, []);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    !loginState ? history.push("/login") : history.push("/");
-  }, [loginState]);
+    !loading ? setLoading(true) : !loginState && history.push("/login");
+  }, [loginState, loading]);
 
-  return (
+  return !loading ? (
+    <div className={styles.HomeContainer}>
+      <div className={styles.LoadingContainer}>
+        <img src="Login.svg" alt="Loading" />
+        <h1>Loading...</h1>
+      </div>
+    </div>
+  ) : (
     <ChallengesProvider
       level={level}
       currentExperience={currentExperience}

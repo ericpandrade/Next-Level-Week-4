@@ -4,13 +4,13 @@ function usePersistedState(key: string, initialState: any) {
   const [state, setState] = useState(initialState);
 
   useEffect(() => {
-    const storageValue = sessionStorage.getItem(key);
+    const storageValue = localStorage.getItem(key);
 
     storageValue ? setState(JSON.parse(storageValue)) : setState(initialState);
   }, []);
 
   useEffect(() => {
-    sessionStorage.setItem(key, JSON.stringify(state));
+    localStorage.setItem(key, JSON.stringify(state));
   }, [key, state]);
 
   return [state, setState];

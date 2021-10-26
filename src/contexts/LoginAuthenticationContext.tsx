@@ -20,7 +20,7 @@ const LoginAuthenticationProvider = ({
 }: LoginAuthenticationProps) => {
   const [loginState, setLoginState] = usePersistedState(
     "@LoginAuthenticationContext/loginState",
-    false
+     false
   );
 
   function routeAuthentication() {

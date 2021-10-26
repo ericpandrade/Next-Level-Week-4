@@ -13,7 +13,7 @@ const Login = () => {
       <Head>
         <title>Login | Move.it</title>
       </Head>
-      <img src="Login.svg" alt="LOgo Full Login" className={styles.LogoFull} />
+      <img src="Login.svg" alt="Logo Full Login" className={styles.LogoFull} />
 
       <div className={styles.AuthContainer}>
         <img src="logo-full.svg" alt="Logo Login" />
