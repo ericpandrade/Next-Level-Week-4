@@ -1,7 +1,8 @@
 .HomeContainer {
   display: flex;
+
   @media (max-width: 720px) {
-    padding-bottom: 25rem;
+    padding-bottom: 20rem;
   }
 }
 

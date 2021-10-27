@@ -1,17 +1,41 @@
 /* eslint-disable @next/next/no-img-element */
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { ChallengesContext } from "../contexts/ChallengesContexts";
+import { useLoginAuthenticationContext } from "../contexts/LoginAuthenticationContext";
+import Login from "../pages/login";
+import api from "../services/api";
 
 import styles from "../styles/components/Profile.module.scss";
 
 export function Profile() {
   const { level } = useContext(ChallengesContext);
 
+  const { setLoginState } = useLoginAuthenticationContext();
+
+  const { profile, gitHubUser, setGitHubUser, setProfile } =
+    useLoginAuthenticationContext();
+
+  useEffect(() => {
+    async function GetDataApi() {
+      try {
+        const { data } = await api.get(profile);
+
+        setGitHubUser(data);
+      } catch {
+        window.alert("Digite um usuário válido, por favor!");
+        setLoginState(false);
+        setProfile("");
+      }
+    }
+
+    GetDataApi();
+  }, []);
+
   return (
     <div className={styles.profileContainer}>
-      <img src="https://github.com/ericpandrade.png" alt="Eric Andrade" />
+      <img src={gitHubUser.avatar_url || "Login.svg"} alt="Eric Andrade" />
       <div>
-        <strong>Eric Pereira Andrade</strong>
+        <strong>{gitHubUser.name || "Essa pessoa não possui um nome."}</strong>
 
         <p>
           <img src="icons/level.svg" alt="Level" />

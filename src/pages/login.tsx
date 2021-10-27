@@ -6,17 +6,21 @@ import Link from "next/link";
 import { useLoginAuthenticationContext } from "../contexts/LoginAuthenticationContext";
 
 const Login = () => {
-  const { routeAuthentication } = useLoginAuthenticationContext();
+  const { routeAuthentication, setProfile } = useLoginAuthenticationContext();
 
   return (
     <div className={styles.LoginContainer}>
       <Head>
         <title>Login | Move.it</title>
       </Head>
-      <img src="Login.svg" alt="Logo Full Login" className={styles.LogoFull} />
+      <img src="Login.svg" alt="LOgo Full Login" className={styles.LogoFull} />
 
       <div className={styles.AuthContainer}>
-        <img src="logo-full.svg" alt="Logo Login" />
+        <img
+          src="logo-full.svg"
+          alt="Logo Login"
+          className={styles.LogoLogin}
+        />
         <h1>Bem-vindo</h1>
         <div>
           <img
@@ -26,17 +30,24 @@ const Login = () => {
           />
 
           <p>
-            Faça login com o GitHub <br /> para conectar.
+            Digite o seu usuário GitHub <br />
+            Para conectar
           </p>
         </div>
-        <Link href="/">
-          <a>
-            <button onClick={routeAuthentication}>
-              <span>Logar com o GitHub</span>
-              <img src="icons/arrow-login.svg" alt="Login" />
-            </button>
-          </a>
-        </Link>
+        <div className={styles.InputContainer}>
+          <input
+            type="text"
+            placeholder="Digite seu nome aqui"
+            onChange={(event) => setProfile(event.target.value)}
+          />
+          <Link href="/">
+            <a>
+              <button onClick={routeAuthentication}>
+                <img src="icons/arrow-login.svg" alt="Login" />
+              </button>
+            </a>
+          </Link>
+        </div>
       </div>
     </div>
   );

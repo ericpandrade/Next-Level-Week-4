@@ -2,9 +2,19 @@ import { createContext, ReactNode, useContext } from "react";
 
 import usePersistedState from "../Utils/UsePersistedState";
 
+interface GitHubUserData {
+  name: string;
+  avatar_url: string;
+}
+
 interface loginAuthenticationContextData {
   loginState: boolean;
+  setLoginState: (loginState) => void;
   routeAuthentication: () => void;
+  profile: string;
+  setProfile: (profile) => void;
+  gitHubUser: GitHubUserData;
+  setGitHubUser: (gitHubUser) => void;
 }
 
 interface LoginAuthenticationProps {
@@ -20,7 +30,17 @@ const LoginAuthenticationProvider = ({
 }: LoginAuthenticationProps) => {
   const [loginState, setLoginState] = usePersistedState(
     "@LoginAuthenticationContext/loginState",
-     false
+    false
+  );
+
+  const [profile, setProfile] = usePersistedState(
+    "@LoginAuthenticationContext/profile",
+    ""
+  );
+
+  const [gitHubUser, setGitHubUser] = usePersistedState(
+    "LoginAuthenticationContext/GitHub",
+    {} as GitHubUserData
   );
 
   function routeAuthentication() {
@@ -29,7 +49,15 @@ const LoginAuthenticationProvider = ({
 
   return (
     <LoginAuthenticationContext.Provider
-      value={{ loginState, routeAuthentication }}
+      value={{
+        loginState,
+        routeAuthentication,
+        profile,
+        setProfile,
+        gitHubUser,
+        setGitHubUser,
+        setLoginState,
+      }}
     >
       {children}
     </LoginAuthenticationContext.Provider>
