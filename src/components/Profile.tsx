@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { useContext, useEffect } from "react";
+import { getSystemErrorMap } from "util";
 import { ChallengesContext } from "../contexts/ChallengesContexts";
 import { useLoginAuthenticationContext } from "../contexts/LoginAuthenticationContext";
 import Login from "../pages/login";
@@ -22,7 +23,6 @@ export function Profile() {
 
         setGitHubUser(data);
       } catch {
-        window.alert("Digite um usuário válido, por favor!");
         setLoginState(false);
         setProfile("");
       }
