@@ -2,12 +2,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
 
-# Pomodoro Timer with Exercise
-
-## Project not finished.
+# Pomodoro Timer with some Exercises
 
 <span style="font-family: 'Poppins', sans-serif;font-size:9pt">
-Creation of a timer pomodor with some exercises to depilate a little, and take the stress out of activities, thus making the activity more productive. Project developed at NLW 4 with some specific additions in the application.
+Creation of a timer pomodoro with some exercises to de-stress a little, and take the stress out of activities, thus making the activity more productive. Project developed at NLW 4 with some specific additions in the application.
 </span>
 
 <br/>
@@ -17,7 +15,7 @@ Creation of a timer pomodor with some exercises to depilate a little, and take t
 
 <span style="font-family: 'Poppins', sans-serif;font-size:9pt">
 
-You can follow the site through the Link: No link, so far!
+You can follow the site through the Link: https://moveit-ericpandrade.vercel.app/
 
 </span>
 
@@ -67,6 +65,96 @@ Start the server
 ```bash
   npm run start
 ```
+
+<br/>
+<br/>
+
+<div>
+  <span style="font-family: 'Poppins', sans-serif;font-size:16pt">
+
+![Additions](public/icons/readme-challenges.svg) NLW Challenges
+</span>
+
+  <p style="font-family: 'Poppins', sans-serif;font-size:10pt">
+  Responsivity
+  </p>
+
+  <p style="font-family: 'Poppins', sans-serif;font-size:10pt">
+  Dark Theme
+  </p>
+
+  <p style="font-family: 'Poppins', sans-serif;font-size:10pt">
+  Login
+  </p>
+
+  <p style="font-family: 'Poppins', sans-serif;font-size:10pt">
+  GitHub Api Login
+  </p>
+</div>
+
+<br/>
+
+<img src="https://camo.githubusercontent.com/3fa18cce0455bff030d54f283e560749b45f7bf4f2751857db81ff1bc3cb2bce/68747470733a2f2f696d672e69636f6e73382e636f6d2f6475736b2f36342f3030303030302f6b726974612e706e67"/> <span style="font-family: 'Poppins', sans-serif;font-size:20pt"> Designs<span>
+
+<br/>
+
+### **Desktop**
+
+<br />
+
+<p style="font-family: 'Poppins', sans-serif;font-size:10pt">
+Home Desktop Light
+</p>
+
+![Home Desktop Light](public/Designs/HomeDesktop/home-desktop-light.jpeg)
+
+<p style="font-family: 'Poppins', sans-serif;font-size:10pt">
+Home Desktop Dark
+</p>
+
+![Home Desktop Dark](public/Designs/HomeDesktop/home-desktop-dark.jpeg)
+
+<p style="font-family: 'Poppins', sans-serif;font-size:10pt">
+Login Desktop Light
+</p>
+
+![Login Desktop Light](public/Designs/LoginDesktop/login-desktop-light.jpeg)
+
+<p style="font-family: 'Poppins', sans-serif;font-size:10pt">
+Login Desktop Dark
+</p>
+
+![Login Desktop Dark](public/Designs/LoginDesktop/login-desktop-dark.jpeg)
+
+<br/>
+
+### **Mobile**
+
+<br />
+
+<p style="font-family: 'Poppins', sans-serif;font-size:10pt">
+Home Mobile Light
+</p>
+
+![Home Mobile Light](public/Designs/HomeMobile/home-mobile-light.jpeg)
+
+<p style="font-family: 'Poppins', sans-serif;font-size:10pt">
+Home Mobile Dark
+</p>
+
+![Home Mobile Dark](public/Designs/HomeMobile/home-mobile-dark.jpeg)
+
+<p style="font-family: 'Poppins', sans-serif;font-size:10pt">
+Login Mobile Light
+</p>
+
+![Login Mobile Light](public/Designs/LoginMobile/login-mobile-light.jpeg)
+
+<p style="font-family: 'Poppins', sans-serif;font-size:10pt">
+Login Mobile Dark
+</p>
+
+![Login Mobile Dark](public/Designs/LoginMobile/login-mobile-dark.jpeg)
 
 <br/>
 <br/>
