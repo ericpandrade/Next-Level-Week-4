@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useContext } from "react";
+import { createContext, ReactNode, useContext, useState } from "react";
 
 import usePersistedState from "../Utils/UsePersistedState";
 
@@ -15,6 +15,8 @@ interface loginAuthenticationContextData {
   setProfile: (profile) => void;
   gitHubUser: GitHubUserData;
   setGitHubUser: (gitHubUser) => void;
+  block: boolean;
+  setBlock: (block) => void;
 }
 
 interface LoginAuthenticationProps {
@@ -43,6 +45,11 @@ const LoginAuthenticationProvider = ({
     {} as GitHubUserData
   );
 
+  const [block, setBlock] = usePersistedState(
+    "LoginAuthenticationContext/block",
+    false
+  );
+
   function routeAuthentication() {
     setLoginState(!loginState);
   }
@@ -57,6 +64,8 @@ const LoginAuthenticationProvider = ({
         gitHubUser,
         setGitHubUser,
         setLoginState,
+        block,
+        setBlock,
       }}
     >
       {children}

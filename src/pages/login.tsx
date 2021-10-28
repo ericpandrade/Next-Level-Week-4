@@ -6,7 +6,8 @@ import Link from "next/link";
 import { useLoginAuthenticationContext } from "../contexts/LoginAuthenticationContext";
 
 const Login = () => {
-  const { routeAuthentication, setProfile } = useLoginAuthenticationContext();
+  const { routeAuthentication, setProfile, block } =
+    useLoginAuthenticationContext();
 
   return (
     <div className={styles.LoginContainer}>
@@ -48,6 +49,15 @@ const Login = () => {
             </a>
           </Link>
         </div>
+
+        {!block ? (
+          ""
+        ) : (
+          <div className={styles.ErrorContainer}>
+            <img src="erro.svg" alt="Site com erro 404" />
+            <p className={styles.ErrorMessage}>Usuário não encontrado!</p>
+          </div>
+        )}
       </div>
     </div>
   );

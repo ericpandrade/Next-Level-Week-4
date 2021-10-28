@@ -11,7 +11,7 @@ import styles from "../styles/components/Profile.module.scss";
 export function Profile() {
   const { level } = useContext(ChallengesContext);
 
-  const { setLoginState } = useLoginAuthenticationContext();
+  const { setLoginState, setBlock } = useLoginAuthenticationContext();
 
   const { profile, gitHubUser, setGitHubUser, setProfile } =
     useLoginAuthenticationContext();
@@ -22,7 +22,10 @@ export function Profile() {
         const { data } = await api.get(profile);
 
         setGitHubUser(data);
+
+        setBlock(false);
       } catch {
+        setBlock(true);
         setLoginState(false);
         setProfile("");
       }
