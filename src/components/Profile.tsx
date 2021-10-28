@@ -25,9 +25,9 @@ export function Profile() {
 
         setBlock(false);
       } catch {
-        setBlock(true);
         setLoginState(false);
         setProfile("");
+        profile != "" && setBlock(true);
       }
     }
 
